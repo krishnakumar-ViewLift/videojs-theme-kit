@@ -1,0 +1,22 @@
+{
+  "name": "videojs-quiz",
+  "version": "1.0.0",
+  "description": "Interactive quiz for video.js",
+  "main": "dist/videojs_quiz",
+  "module": "dist/videojs_quiz",
+  "style": "dist/style.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daman",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^4.0.0",
+    "load-grunt-tasks": "^5.1.0",
+    "sass": "^1.85.1"
+  }
+}
