@@ -125,6 +125,6 @@ import videojs from "video.js";
   };
 
   // Register the plugin with Video.js
-  videojs.registerPlugin('interactiveQuiz', InteractiveQuizPlugin);
+  videojs.registerPlugin('quiz', InteractiveQuizPlugin);
 
 })(videojs);
