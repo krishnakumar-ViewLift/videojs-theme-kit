@@ -53,7 +53,7 @@ import videojs from "video.js";
           button.textContent = `${index+1}`+". "+quiz.answers[index];
           button.style.display = 'block'; // Ensure visible if needed
           button.onclick = function () {
-            handleOptionSelect(index, quiz.correctAnswer, quiz.questionId || index, quiz);
+            handleOptionSelect(index, quiz.correctAnswer, quiz.questionId, quiz);
           };
         } else {
           button.style.display = 'none'; // Hide unused buttons properly
