@@ -1,8 +1,7 @@
 import videojs from "video.js";
-(function(videojs) {
+(function (videojs) {
 
-  var InteractiveQuizPlugin = function(options) {
-
+  var InteractiveQuizPlugin = function (options) {
     var player = this; // This refers to the Video.js player instance
     var quizData = options.quizData || []; // The quiz data passed into the plugin options
     var currentQuizIndex = 0; // Keep track of the current quiz question
@@ -10,71 +9,66 @@ import videojs from "video.js";
 
     // Create the quiz popup and make it part of the Video.js player container
     var quizPopup = document.createElement('div');
-    quizPopup.className = 'quiz-popup';
+    quizPopup.className = 'vjs-quiz-popup';
     quizPopup.style.display = 'none';
 
-
+    
     var quizContents = document.createElement('div');
-    quizContents.className='quiz-contents'
+    quizContents.className = 'vjs-quiz-contents'
 
 
     // Create a question element inside the popup
     var questionElement = document.createElement('div');
-    questionElement.className='quiz-question'
+    questionElement.className = 'vjs-quiz-question'
     quizContents.appendChild(questionElement);
 
     var answerContainer = document.createElement('div');
-    answerContainer.className = 'quiz-answers';
-    
+    answerContainer.className = 'vjs-quiz-options';
+
     // Create answer buttons inside the container
     var answerButtons = [];
     for (var i = 0; i < 4; i++) {
       var button = document.createElement('button');
-      button.className = 'quiz-answer-btn';
+      button.className = 'vjs-quiz-option-btn';
       answerContainer.appendChild(button);
       answerButtons.push(button);
     }
-    
+
     // Append answer container inside quiz popup
     quizContents.appendChild(answerContainer);
-    
-
 
 
     quizPopup.appendChild(quizContents)
     // Append the quiz popup to the player's element (inside the player container)
     player.el().appendChild(quizPopup);
 
+
     // Function to show quiz and pause video
-// Function to show quiz and pause video
-function showQuizPopup(quiz) {
-  questionElement.textContent = quiz.question;
+    function showQuizPopup(quiz) {
+      player.pause(); // Pause the video
+      player.controls(false);
+      questionElement.textContent = quiz.question;
+      answerButtons.forEach((button, index) => {
+        if (quiz.answers[index] !== undefined) {
+          button.textContent = `${index+1}`+". "+quiz.answers[index];
+          button.style.display = 'block'; // Ensure visible if needed
+          button.onclick = function () {
+            handleOptionSelect(index, quiz.correctAnswer, quiz.questionId || index, quiz);
+          };
+        } else {
+          button.style.display = 'none'; // Hide unused buttons properly
+        }
+      });
 
-  answerButtons.forEach((button, index) => {
-    console.log(quiz.answers[index]);
-    
-    if (quiz.answers[index] !== undefined) {
-      button.textContent = quiz.answers[index];
-      button.style.display = 'block'; // Ensure visible if needed
-      button.onclick = function () {
-        checkAnswer(index, quiz.correctAnswer, quiz.questionId, quiz);
-      };
-    } else {
-      
-      button.style.display = 'none'; // Hide unused buttons properly
+      quizPopup.style.display = 'block'; // Show the quiz popup
     }
-  });
 
-  quizPopup.style.display = 'block'; // Show the quiz popup
-  player.pause(); // Pause the video
-}
-
-
-    // Function to check the answer and send data to the backend
-    function checkAnswer(selectedIndex, correctIndex, questionId, quiz) {
+    // Function to check the answer
+    function handleOptionSelect(selectedIndex, correctIndex, questionId, quiz) {
       var isCorrect = selectedIndex === correctIndex;
 
       quizPopup.style.display = 'none'; // Hide the quiz popup
+      player.controls(true);
       player.play(); // Resume the video
 
       // Mark this quiz as answered
@@ -97,20 +91,17 @@ function showQuizPopup(quiz) {
       var event = new CustomEvent('quizAnswer', {
         detail: userAnswerData
       });
-
       // Dispatch the event globally or on a specific element
       player.el().dispatchEvent(event);
     }
 
+    
     let lastTriggeredTime = -1; // Prevents multiple triggers within the same second
-
     player.on('timeupdate', function () {
       var currentTime = Math.floor(player.currentTime()); // Round time to whole seconds
-    
       // Prevent multiple triggers within the same second
       if (currentTime === lastTriggeredTime) return;
       lastTriggeredTime = currentTime;
-    
       quizData.forEach((quiz) => {
         if (quiz.time === currentTime && !answeredQuizzes.has(quiz.time)) {
           showQuizPopup(quiz); // Show the quiz
@@ -118,11 +109,10 @@ function showQuizPopup(quiz) {
         }
       });
     });
-    
-    
+
 
     // Handle user skipping to a timestamp
-    player.on('seeked', function() {
+    player.on('seeked', function () {
       var currentTime = player.currentTime();
       for (var i = 0; i < quizData.length; i++) {
         if (quizData[i].time <= currentTime && !answeredQuizzes.has(quizData[i].questionId)) {
