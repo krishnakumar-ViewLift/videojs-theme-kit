@@ -7,7 +7,8 @@ module.exports = function (grunt) {
       sass: {
         options: {
           implementation: require('sass'), // Use Dart Sass
-          sourceMap: false
+          sourceMap: false,
+          includePaths: ['src/scss'] 
         },
         dist: {
           files: {
@@ -30,8 +31,17 @@ module.exports = function (grunt) {
               }
             }
           ]
-        }
+        },
+        package_json: {
+          files: [
+            {
+              src: 'package.json', // Copy package.json
+              dest: 'dist/package.json'
+            }
+          ]
+        },
       },
+
   
       // Minify JavaScript
       uglify: {
@@ -41,6 +51,18 @@ module.exports = function (grunt) {
           }
         }
       },
+
+      concat: {
+        index: {
+            options: {
+                banner: 'import "./style.css";\n', // Add CSS import at the top
+                footer: '\nexport { default } from "./videojs-quiz.normal.js";' // Add JS export at the bottom
+            },
+            src: [], // No need for actual content, just headers & footers
+            dest: 'dist/index.js'
+        }
+    },
+
   
       // Watch for changes
       watch: {
@@ -62,6 +84,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
   
     // Register default task
-    grunt.registerTask('default', ['sass', 'copy:js', 'uglify', 'watch']);
+    grunt.registerTask('default', ['sass', 'copy:js', 'copy:package_json', 'uglify','concat', 'watch']);
   };
   

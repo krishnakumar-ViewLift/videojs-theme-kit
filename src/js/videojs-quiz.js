@@ -1,6 +1,4 @@
 import videojs from "video.js";
-import '../scss/videojs-quiz.scss';
-
 (function(videojs) {
 
   var InteractiveQuizPlugin = function(options) {
@@ -25,32 +23,52 @@ import '../scss/videojs-quiz.scss';
     questionElement.className='quiz-question'
     quizContents.appendChild(questionElement);
 
-    // Create answer buttons inside the popup
+    var answerContainer = document.createElement('div');
+    answerContainer.className = 'quiz-answers';
+    
+    // Create answer buttons inside the container
     var answerButtons = [];
     for (var i = 0; i < 4; i++) {
       var button = document.createElement('button');
       button.className = 'quiz-answer-btn';
-      quizContents.appendChild(button);
+      answerContainer.appendChild(button);
       answerButtons.push(button);
     }
+    
+    // Append answer container inside quiz popup
+    quizContents.appendChild(answerContainer);
+    
+
+
+
     quizPopup.appendChild(quizContents)
     // Append the quiz popup to the player's element (inside the player container)
     player.el().appendChild(quizPopup);
 
     // Function to show quiz and pause video
-    function showQuizPopup(quiz) {
-      questionElement.textContent = quiz.question;
+// Function to show quiz and pause video
+function showQuizPopup(quiz) {
+  questionElement.textContent = quiz.question;
 
-      answerButtons.forEach(function(button, index) {
-        button.textContent = quiz.answers[index];
-        button.onclick = function() {
-          checkAnswer(index, quiz.correctAnswer, quiz.questionId, quiz);
-        };
-      });
-
-      quizPopup.style.display = 'block'; // Show the quiz popup
-      player.pause(); // Pause the video
+  answerButtons.forEach((button, index) => {
+    console.log(quiz.answers[index]);
+    
+    if (quiz.answers[index] !== undefined) {
+      button.textContent = quiz.answers[index];
+      button.style.display = 'block'; // Ensure visible if needed
+      button.onclick = function () {
+        checkAnswer(index, quiz.correctAnswer, quiz.questionId, quiz);
+      };
+    } else {
+      
+      button.style.display = 'none'; // Hide unused buttons properly
     }
+  });
+
+  quizPopup.style.display = 'block'; // Show the quiz popup
+  player.pause(); // Pause the video
+}
+
 
     // Function to check the answer and send data to the backend
     function checkAnswer(selectedIndex, correctIndex, questionId, quiz) {
