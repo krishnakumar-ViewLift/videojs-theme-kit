@@ -5,6 +5,7 @@
   "main": "dist/videojs_quiz",
   "module": "dist/videojs_quiz",
   "style": "dist/style.css",
+  "repository": "https://github.com/dds05/videojs-quiz",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
