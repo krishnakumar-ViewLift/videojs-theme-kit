@@ -53,7 +53,4 @@ Post installation, import and use the package like shown below:-
 ```
 
 
-## Details
-
-
 
