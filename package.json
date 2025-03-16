@@ -8,6 +8,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+		"videojs",
+		"videojs-quiz",
+		"quiz"
+	],
   "author": "Daman",
   "license": "ISC",
   "devDependencies": {
