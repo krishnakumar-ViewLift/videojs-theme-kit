@@ -1,5 +1,7 @@
 # videojs-quiz
-Interactive quiz for videojs.
+Interactive quiz for video.js player.<br/> <br/>
+This plugin brings interactive quizzes to videos, allowing users to answer multiple-choice questions directly within the player.<br/>
+It ensures active participation by requiring users to complete the quiz before continuing playback, making it ideal for e-learning, training, and interactive engagement.
 
 ## Installation
 `npm i videojs-quiz`
