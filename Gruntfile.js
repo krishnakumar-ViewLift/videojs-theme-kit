@@ -32,19 +32,19 @@ module.exports = function (grunt) {
             }
           ]
         },
-        package_json: {
-          files: [
-            {
-              src: 'package.json', // Copy package.json
-              dest: 'dist/package.json'
-            }
-          ]
-        },
-        readme: { // Add this section
+        direct_files: { // Add this section
           files: [
             {
               src: 'README.md',
               dest: 'dist/README.md'
+            },
+            {
+              src: 'package.json', // Copy package.json
+              dest: 'dist/package.json'
+            },
+            {
+              src: 'LICENSE.md', // Copy package.json
+              dest: 'dist/LICENSE.md'
             }
           ]
         }
@@ -92,6 +92,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
   
     // Register default task
-    grunt.registerTask('default', ['sass', 'copy:js', 'copy:package_json','copy:readme', 'uglify','concat', 'watch']);
+    grunt.registerTask('default', ['sass', 'copy:js', 'copy:direct_files',, 'uglify','concat', 'watch']);
   };
   
