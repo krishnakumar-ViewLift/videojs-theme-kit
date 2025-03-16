@@ -40,6 +40,14 @@ module.exports = function (grunt) {
             }
           ]
         },
+        readme: { // Add this section
+          files: [
+            {
+              src: 'README.md',
+              dest: 'dist/README.md'
+            }
+          ]
+        }
       },
 
   
@@ -84,6 +92,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
   
     // Register default task
-    grunt.registerTask('default', ['sass', 'copy:js', 'copy:package_json', 'uglify','concat', 'watch']);
+    grunt.registerTask('default', ['sass', 'copy:js', 'copy:package_json','copy:readme', 'uglify','concat', 'watch']);
   };
   
