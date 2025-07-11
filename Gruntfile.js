@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         },
         dist: {
           files: {
-            'dist/style.css': 'src/scss/videojs-quiz.scss'
+            'dist/sty.css': 'src/scss/videojs-skin.scss'
           }
         }
       },
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             {
               expand: true,
               cwd: 'src/js/',
-              src: ['videojs-quiz.js'], // Source file
+              src: ['videojs-skin.js'], // Source file
               dest: 'dist/', // Destination folder
               rename: function (dest, src) {
                 return dest + src.replace('.js', '.normal.js'); // Rename as normal.js
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
       uglify: {
         dist: {
           files: {
-            'dist/videojs_quiz.min.js': ['src/js/videojs-quiz.js'] // Minified version
+            'dist/videojs_skin.min.js': ['src/js/videojs-skin.js'] // Minified version
           }
         }
       },
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         index: {
             options: {
                 banner: 'import "./style.css";\n', // Add CSS import at the top
-                footer: '\nexport { default } from "./videojs-quiz.normal.js";' // Add JS export at the bottom
+                footer: '\nexport { default } from "./videojs-skin.normal.js";' // Add JS export at the bottom
             },
             src: [], // No need for actual content, just headers & footers
             dest: 'dist/index.js'
@@ -92,6 +92,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
   
     // Register default task
-    grunt.registerTask('default', ['sass', 'copy:js', 'copy:direct_files',, 'uglify','concat', 'watch']);
+    grunt.registerTask('default', ['sass', 'copy:js', 'copy:direct_files', 'uglify','concat', 'watch']);
   };
   
