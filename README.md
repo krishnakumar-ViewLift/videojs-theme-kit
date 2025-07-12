@@ -11,7 +11,7 @@ import 'videojs-theme-kit';
 
 player.on('ready',()=>{
   player.theme({skin: SKIN_NAME})
-}
+})
 ```
 
 ## Options
