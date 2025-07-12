@@ -27,7 +27,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/videojs-skin.js': 'src/ts/videojs-skin.ts'
+          'dist/videojs-skin.js': 'src/videojs-skin.ts'
         }
       },
       minified: {
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/videojs-skin.min.js': 'src/ts/videojs-skin.ts'
+          'dist/videojs-skin.min.js': 'src/videojs-skin.ts'
         }
       },
       dts: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/videojs-skin.d.ts': 'src/ts/types/index.ts'
+          'dist/videojs-skin.d.ts': 'src/types/index.ts'
         }
       }
     },
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'dist/videojs-skin.css': 'src/scss/videojs-skin.scss'
+          'dist/style.css': 'src/styles/videojs-skin.scss'
         }
       }
     },

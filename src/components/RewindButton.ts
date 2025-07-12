@@ -1,5 +1,5 @@
 import videojs from "video.js";
-import { parseSvgString } from '../helper'
+import { parseSvgString } from '../utils/helper'
 import Player from "video.js/dist/types/player";
 import { VideoJSPlayer } from "../types";
 

@@ -1,6 +1,6 @@
 import videojs from "video.js";
 import { addRewindButton } from './components/RewindButton';
-import { ThemeOptions, VideoJSPlayer } from "./types";
+import { ThemeOptions, VideoJSPlayer } from "./types/index";
 
 
 
