@@ -16,7 +16,7 @@ player.on('ready',()=>{
 
 ## Options
 
-The SKIN_NAME names are provided as following :-
+Available SKIN_NAME names are provided as :-
 
 1. 'slate'.
 2. 'spaced'.
