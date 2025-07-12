@@ -11,9 +11,9 @@
   },
   "keywords": [
 		"videojs",
-    "videojs-plugin",
-		"videojs-quiz",
-		"quiz"
+    "videojs-theme",
+		"videojs-theme-kit",
+		"videojs-customisation"
 	],
   "author": "Daman",
   "license": "ISC",
