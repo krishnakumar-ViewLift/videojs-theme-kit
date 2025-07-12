@@ -5,7 +5,7 @@ An interactive plugin
 ## Installation  
 npm install videojs-theme-kit
 
-## Usage
+## Usage 
 ```
 import 'videojs-theme-kit';
 
