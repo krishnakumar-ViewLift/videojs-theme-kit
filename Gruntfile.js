@@ -55,7 +55,7 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'dist/videojs-skin.min.css': 'src/scss/videojs-skin.scss'
+          'dist/videojs-skin.css': 'src/scss/videojs-skin.scss'
         }
       }
     },
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
       index: {
           options: {
               banner: 'import "./style.css";\n', // Add CSS import at the top
-              footer: '\nexport { default } from "./videojs-skin.normal.js";' // Add JS export at the bottom
+              footer: '\nexport { default } from "./videojs-skin.min.js";' // Add JS export at the bottom
           },
           src: [], // No need for actual content, just headers & footers
           dest: 'dist/index.js'
@@ -92,5 +92,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['clean', 'rollup:unminified', 'rollup:minified', 'sass','copy:direct_files']);
+  grunt.registerTask('default', ['clean', 'rollup:unminified', 'concat','rollup:minified', 'sass','copy:direct_files']);
 };
