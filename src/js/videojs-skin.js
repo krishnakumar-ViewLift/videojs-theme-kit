@@ -68,7 +68,7 @@ import { addRewindButton } from './components/RewindButton'
 
         this.removeChild('controlBar');
         this.el().append(sleekbar);
-
+        break;
 
       }
       default:
