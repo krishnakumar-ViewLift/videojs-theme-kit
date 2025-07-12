@@ -1,9 +1,13 @@
 import videojs from "video.js";
 import { parseSvgString } from '../helper'
-const addRewindButton = (player) => {
+import Player from "video.js/dist/types/player";
+import { VideoJSPlayer } from "../types";
+
+
+const addRewindButton = (player:Player) => {
     var Button = videojs.getComponent('Button');
     class MyRewindButton extends Button {
-        constructor(player, options) {
+        constructor(player:VideoJSPlayer, options:any) {
             super(player, options)
             let buttonElement = this.el_
             let iconPlaceHolder = buttonElement.querySelector('.vjs-icon-placeholder')
@@ -17,8 +21,10 @@ const addRewindButton = (player) => {
         }
         handleClick() {
             let currentTime = player.currentTime();
-            let newTime = currentTime - 10;
-            player.currentTime(newTime);
+            if(currentTime){
+                let newTime = currentTime - 10;
+                player.currentTime(newTime);
+            }
         }
     };
     videojs.registerComponent('MyRewindButton', MyRewindButton);

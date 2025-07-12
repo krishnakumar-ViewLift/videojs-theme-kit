@@ -1,4 +1,7 @@
 const terser = require('@rollup/plugin-terser');
+const typescript = require('@rollup/plugin-typescript');
+const dts = require('rollup-plugin-dts').default;
+
 
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -11,7 +14,8 @@ module.exports = function (grunt) {
         options: {
           plugins: () => [
             require('@rollup/plugin-node-resolve').nodeResolve({ browser: true }),
-            require('@rollup/plugin-commonjs')()
+            require('@rollup/plugin-commonjs')(),
+            typescript({ tsconfig: './tsconfig.json' })
           ],
           external: ['video.js'],
           output: {
@@ -23,7 +27,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/videojs-skin.js': 'src/js/videojs-skin.js'
+          'dist/videojs-skin.js': 'src/ts/videojs-skin.ts'
         }
       },
       minified: {
@@ -31,7 +35,8 @@ module.exports = function (grunt) {
           plugins: () => [
             require('@rollup/plugin-node-resolve').nodeResolve({ browser: true }),
             require('@rollup/plugin-commonjs')(),
-            terser()
+            typescript({ tsconfig: './tsconfig.json',  noEmitOnError: false }),
+            terser(),
           ],
           external: ['video.js'],
           output: {
@@ -43,7 +48,18 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/videojs-skin.min.js': 'src/js/videojs-skin.js'
+          'dist/videojs-skin.min.js': 'src/ts/videojs-skin.ts'
+        }
+      },
+      dts: {
+        options: {
+          plugins: () => [dts()],
+          output: {
+            format: 'es'
+          }
+        },
+        files: {
+          'dist/videojs-skin.d.ts': 'src/ts/types/index.ts'
         }
       }
     },
@@ -63,7 +79,7 @@ module.exports = function (grunt) {
       index: {
           options: {
               banner: 'import "./style.css";\n', // Add CSS import at the top
-              footer: '\nexport { default } from "./videojs-skin.min.js";' // Add JS export at the bottom
+              footer: '\nexport { default } from "./videojs-skin.min.js"; \n import "./videojs-skin.ts"' // Add JS export at the bottom
           },
           src: [], // No need for actual content, just headers & footers
           dest: 'dist/index.js'
@@ -87,10 +103,10 @@ module.exports = function (grunt) {
         ]
       }
     },
-
   });
+  grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-copy');
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['clean', 'rollup:unminified', 'concat','rollup:minified', 'sass','copy:direct_files']);
+  grunt.registerTask('default', ['clean', 'rollup:unminified', 'concat','rollup:minified','rollup:dts', 'sass','copy:direct_files']);
 };

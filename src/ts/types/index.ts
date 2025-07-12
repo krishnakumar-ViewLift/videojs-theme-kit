@@ -1,0 +1,18 @@
+import type Player from 'video.js/dist/types/player';
+import type ControlBar from 'video.js/dist/types/control-bar/control-bar'
+
+import type Component from 'video.js/dist/types/component'
+
+interface ThemeOptions extends Player {
+    skin?: 'slate' | 'spaced' | 'sleek';
+}
+
+type VideoJSPlayer = Player & Component & {
+    removeChild: any;
+    controlBar?: ControlBar & {
+        removeChild: any
+    }
+};
+
+
+export type { VideoJSPlayer, ThemeOptions }
