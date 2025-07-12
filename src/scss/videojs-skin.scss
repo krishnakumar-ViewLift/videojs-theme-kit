@@ -163,7 +163,7 @@
 
 
 
-  //BIG
+  //SPACED
   .video-js.skin_spaced .vjs-button>.vjs-icon-placeholder:before {
     font-size: 2.2em;
     line-height: 2.6;
@@ -179,14 +179,38 @@
     opacity: 0 !important;
     transition: visibility 1s, opacity 1s !important;
     }
+
+    .video-js.skin_spaced .custom-spaced-progress-bar{
+      position: absolute;
+      width: 100%;
+      display: flex;
+      height: .5em;
+      top: -.5em;
+    }
     
     .video-js.skin_spaced .vjs-progress-control {
     left: -6px;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 0.5em;
     top: -0.5em;
     transition: height .1s,top .1s;
+    }
+
+    .video-js.skin_spaced .vjs-current-time { 
+      display: block; 
+    }
+    .video-js.skin_spaced.vjs-live .vjs-current-time { 
+      display: none !important; 
+    }
+    
+    .video-js.skin_spaced .vjs-current-time {
+    display: block;
+    position: relative;
+    right: 0em;
+    bottom: 1.8em;
+    font-size: 12px;
+    font-weight: 600;
     }
     
     .video-js.skin_spaced .vjs-custom-control-spacer {
@@ -194,8 +218,9 @@
     flex: 1 1 auto;
     }
     
+    
     .video-js.skin_spaced .vjs-progress-control .vjs-progress-holder {
-    margin: 0 41px 0 14px;
+    margin: 0 0 0 20px
     }
     .video-js.skin_spaced .vjs-remaining-time.vjs-time-control.vjs-control{
     display: none;
@@ -234,16 +259,7 @@
     font-size: 1em !important;
     }
     
-    .video-js.skin_spaced .vjs-current-time { display: block; }
-    
-    .video-js.skin_spaced .vjs-current-time {
-    display: block;
-    position: absolute;
-    right: 0em;
-    bottom: 1.8em;
-    font-size: 12px;
-    font-weight: 600;
-    }
+
     
     .video-js.skin_spaced .vjs-button{
     width: 6em;
@@ -306,10 +322,8 @@
     }
     
     .video-js.skin_spaced .vjs-seek-to-live-control.vjs-control{
-    position: absolute !important;
-    right: 0em !important;
-    background-color: none;
-    bottom: 3.2em !important;
+      position: relative;
+      top:-.5em;
     }
     
     .video-js.skin_spaced .vjs-seek-to-live-control.vjs-control >span.vjs-icon-placeholder{
@@ -347,9 +361,6 @@
     }
     
     .video-js.skin_spaced .vjs-subs-caps-button.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     display: none;
     }
     
@@ -411,7 +422,7 @@
     }
     
     .video-js.skin_spaced .video-js.skin_spaced .vjs-progress-control{
-    top: -0.85em;
+    // top: -0.85em;
     }
     .video-js.skin_spaced .vjs-live-control{
     right: -1em !important;
@@ -448,8 +459,6 @@
     font-size: 1.2em;
     position: absolute;
     right: -0.5em;
-    /* top: 0em !important; */
-    /* top: -0.3333333333em; */
     z-index: 1;
     }
     .video-js.skin_spaced button.vjs-skip-button>svg{
@@ -475,10 +484,7 @@
     font-size: 12px;
     }
     .video-js.skin_spaced .vjs-progress-control .vjs-progress-holder {
-    margin: 0 40px 0px 21px;
-    }
-    .video-js.skin_spaced .vjs-current-time{
-    bottom: 2em !important;
+    margin: 0 0 0 20px;
     }
     }
     
@@ -520,7 +526,5 @@
     height: 50px !important;
     font-size: 2.1rem !important;
     }
-    .video-js.skin_spaced .vjs-progress-holder.vjs-slider.vjs-slider-horizontal{
-    margin-right: 16px !important;
-    }
+
     }
