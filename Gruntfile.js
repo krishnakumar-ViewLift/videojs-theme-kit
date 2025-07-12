@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         },
         dist: {
           files: {
-            'dist/sty.css': 'src/scss/videojs-skin.scss'
+            'dist/style.css': 'src/scss/videojs-skin.scss'
           }
         }
       },
