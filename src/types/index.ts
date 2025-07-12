@@ -9,6 +9,7 @@ interface ThemeOptions extends Player {
 
 type VideoJSPlayer = Player & Component & {
     removeChild: any;
+    theme?:(options: ThemeOptions)=>void;
     controlBar?: ControlBar & {
         removeChild: any
     }
