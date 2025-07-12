@@ -3,7 +3,7 @@ An interactive plugin
 
 
 ## Installation  
-npm install videojs-theme-kit
+`npm install videojs-theme-kit`
 
 ## Usage 
 ```
