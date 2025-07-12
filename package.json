@@ -1,7 +1,7 @@
 {
   "name": "videojs-theme-kit",
-  "version": "1.0.0",
-  "description": "Interactive plugin  for video.js",
+  "version": "0.0.1",
+  "description": "Interactive plugin for customising UI for video.js",
   "main": "dist/videojs_skin",
   "module": "dist/videojs_skin",
   "style": "dist/style.css",
@@ -13,7 +13,8 @@
     "videojs",
     "videojs-theme",
     "videojs-theme-kit",
-    "videojs-customisation"
+    "videojs-customisation",
+    "videojs-skins"
   ],
   "author": "Daman",
   "license": "ISC",
