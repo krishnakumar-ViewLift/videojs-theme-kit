@@ -45,6 +45,7 @@ import { zenHandler } from "./skins/zen";
       }
 
       case 'sleek': {
+        player.controls(false);
         player.addClass('skin_sleek');
 
         const sleekbar = document.createElement('div');
@@ -84,7 +85,6 @@ import { zenHandler } from "./skins/zen";
         const FullscreenToggle = player.addChild('FullscreenToggle', {});
         sleekbar.append(FullscreenToggle.el());
 
-        player.removeChild('controlBar');
         player.el()?.append(sleekbar);
         break;
       }
