@@ -1,6 +1,7 @@
 import videojs from "video.js";
 import { addRewindButton } from './components/RewindButton';
 import { ThemeOptions, VideoJSPlayer } from "./types/index";
+import { zenHandler } from "./skins/zen";
 
 
 
@@ -53,7 +54,7 @@ import { ThemeOptions, VideoJSPlayer } from "./types/index";
         if (PlayToggle) sleekbar.append(PlayToggle.el());
 
         const RewindButton = addRewindButton(player);
-        if (RewindButton) sleekbar.append(RewindButton);
+        if (RewindButton) sleekbar.append(RewindButton.el());
 
         const CurrentTimeDisplay = player.controlBar?.getChild('CurrentTimeDisplay');
         if (CurrentTimeDisplay) sleekbar.append(CurrentTimeDisplay.el());
@@ -64,6 +65,9 @@ import { ThemeOptions, VideoJSPlayer } from "./types/index";
         const spacer = document.createElement('div');
         spacer.className = 'vjs-custom-control-spacer vjs-spacer';
         sleekbar.append(spacer);
+
+        const SeekToLive = player.controlBar?.getChild('SeekToLive');      
+        sleekbar.append(SeekToLive.el());
 
         const DurationDisplay = player.controlBar?.getChild('DurationDisplay');
         if (DurationDisplay) sleekbar.append(DurationDisplay.el());
@@ -83,6 +87,11 @@ import { ThemeOptions, VideoJSPlayer } from "./types/index";
         player.removeChild('controlBar');
         player.el()?.append(sleekbar);
         break;
+      }
+
+      case 'zen':{
+        zenHandler(this);
+        break;        
       }
 
       default:

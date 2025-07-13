@@ -28,9 +28,10 @@ const addRewindButton = (player:Player) => {
         }
     };
     videojs.registerComponent('MyRewindButton', MyRewindButton);
-    const myButtonInstance = player.addChild('MyRewindButton', {});
-    const buttonEl = myButtonInstance.el();
-    return buttonEl;
+
+        const instance = new MyRewindButton(player, {});
+        return instance;
+
 }
 
 export { addRewindButton }

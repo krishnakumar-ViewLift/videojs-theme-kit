@@ -4,7 +4,7 @@ import type ControlBar from 'video.js/dist/types/control-bar/control-bar'
 import type Component from 'video.js/dist/types/component'
 
 interface ThemeOptions extends Player {
-    skin?: 'slate' | 'spaced' | 'sleek';
+    skin?: 'slate' | 'spaced' | 'sleek' | 'zen';
 }
 
 type VideoJSPlayer = Player & Component & {
