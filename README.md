@@ -42,5 +42,5 @@ https://videojs-theme-kit-site.vercel.app/
 <img width="600" height="480" alt="Screenshot 2025-07-13 at 7 15 53 PM" src="https://github.com/user-attachments/assets/f90de7e8-47d8-42b6-a37f-7e36f4e731cc" />
 
 
-## Support
+## ❤️ Support
 https://buymeacoffee.com/dds05
