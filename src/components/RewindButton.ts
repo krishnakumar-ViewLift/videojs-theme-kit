@@ -20,7 +20,7 @@ const addRewindButton = (player:Player) => {
             iconPlaceHolder.append(parseSvgString(svg))
         }
         handleClick() {
-            let currentTime = player.currentTime();
+            let currentTime = player?.currentTime();
             if(currentTime){
                 let newTime = currentTime - 10;
                 player.currentTime(newTime);
