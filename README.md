@@ -21,3 +21,4 @@ Available SKIN_NAME names are provided as :-
 1. 'slate'.
 2. 'spaced'.
 3. 'sleel'.
+4. 'zen'
