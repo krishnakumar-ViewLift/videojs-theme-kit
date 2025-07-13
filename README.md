@@ -1,5 +1,5 @@
 ## VideoJS Theme Kit
-An interactive plugin
+An interactive plugin to customise UI of the player
 
 
 ## Installation  
