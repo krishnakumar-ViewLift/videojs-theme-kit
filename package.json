@@ -2,8 +2,8 @@
   "name": "videojs-theme-kit",
   "version": "0.0.1",
   "description": "Interactive plugin for customising UI for video.js",
-  "main": "dist/videojs_skin",
-  "module": "dist/videojs_skin",
+  "main": "index.js",
+  "module": "index.js",
   "style": "dist/style.css",
   "repository": "https://github.com/dds05/videojs-theme-kit",
   "scripts": {
