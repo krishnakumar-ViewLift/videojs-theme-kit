@@ -525,6 +525,11 @@ iframe {
   opacity: 0;
   transition: visibility 1s, opacity 1s;
 }
+.video-js.skin_sleek .vjs-control-bar{
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
 
 .video-js.skin_sleek .sleek-bar {
   position: absolute;
@@ -611,6 +616,11 @@ iframe {
   visibility: hidden;
   opacity: 0;
   transition: visibility 1s, opacity 1s;
+}
+.video-js.skin_zen .vjs-control-bar{
+  visibility: hidden;
+  opacity: 0;
+  display: none;
 }
 
 .video-js.skin_zen .zen-bar {

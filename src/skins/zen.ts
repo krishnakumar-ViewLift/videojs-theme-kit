@@ -5,7 +5,6 @@ import { injectSVG, parseSvgString } from "../utils/helper";
 
 
 const zenHandler = (player: any) => {
-    player.controls(false);
     player.addClass('skin_zen');
 
     const zenbar = document.createElement('div');

@@ -45,7 +45,6 @@ import { zenHandler } from "./skins/zen";
       }
 
       case 'sleek': {
-        player.controls(false);
         player.addClass('skin_sleek');
 
         const sleekbar = document.createElement('div');
