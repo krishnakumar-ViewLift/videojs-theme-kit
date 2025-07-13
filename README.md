@@ -22,3 +22,7 @@ Available SKIN_NAME names :-
 2. 'spaced'.
 3. 'sleel'.
 4. 'zen'
+
+
+## Try it 
+https://videojs-theme-kit-site.vercel.app/
