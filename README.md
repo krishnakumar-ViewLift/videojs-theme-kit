@@ -1,4 +1,4 @@
-## VideoJS Theme Kit
+## Videojs Theme Kit
 Videojs plugin to easily customize and apply skins to Video.js players
 
 
