@@ -1,11 +1,12 @@
 {
   "name": "videojs-theme-kit",
   "version": "0.0.9",
-  "description": "Interactive plugin for customising UI for video.js",
+  "description": "Videojs plugin to easily customize and apply skins to Video.js players",
   "main": "index.js",
   "module": "dist/index.js",
   "style": "dist/style.css",
   "repository": "https://github.com/dds05/videojs-theme-kit",
+  "homepage": "https://videojs-theme-kit-site.vercel.app/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
