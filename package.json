@@ -1,6 +1,6 @@
 {
   "name": "videojs-theme-kit",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Videojs plugin to easily customize and apply skins to Video.js players",
   "main": "index.js",
   "module": "dist/index.js",
@@ -16,7 +16,7 @@
     "videojs-theme",
     "videojs-theme-kit",
     "videojs-customisation",
-    "videojs-skins"
+    "videojs-skin"
   ],
   "author": "Daman",
   "license": "ISC",
