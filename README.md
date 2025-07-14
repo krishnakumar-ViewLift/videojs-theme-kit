@@ -1,5 +1,5 @@
 ## VideoJS Theme Kit
-An interactive plugin to customise UI of the player
+Videojs plugin to easily customize and apply skins to Video.js players
 
 
 ## Installation  
@@ -21,7 +21,7 @@ Available SKIN_NAME names :-
 1. 'slate'.
 2. 'spaced'.
 3. 'sleel'.
-4. 'zen'
+4. 'zen'.
 
 
 
