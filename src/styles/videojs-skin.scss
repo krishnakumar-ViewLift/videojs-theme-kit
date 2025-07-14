@@ -791,6 +791,12 @@ iframe {
   color: #000;
   font-weight: bold;
 }
+.video-js.skin_zen .zen-bar .vjs-volume-bar.vjs-slider-horizontal{
+  width: 3em !important;
+}
+.video-js.skin_zen .zen-bar .vjs-volume-control.vjs-control.vjs-volume-horizontal{
+  width: 3em !important;
+}
 
 @media (max-width: 600px) {
   .video-js.skin_zen .zen-bar {
