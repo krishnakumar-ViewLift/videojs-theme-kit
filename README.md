@@ -1,11 +1,13 @@
-## Videojs Theme Kit
-Videojs plugin to easily customize and apply skins to Video.js players
+## 🎨 Videojs Theme Kit
+Videojs plugin to easily customize and apply skins to Video.js players. Easily customize and apply beautiful skins to your Video.js players with minimal setup. Includes 4 modern themes : Slate, Spaced, Sleek, and Zen to instantly enhance the look and feel of your player without writing custom CSS.
 
 
-## Installation  
-`npm install videojs-theme-kit`
+## 👉🏻 Installation  
+```
+npm install videojs-theme-kit
+```
 
-## Usage 
+## 👨🏻‍💻 Usage 
 ```
 import 'videojs-theme-kit';
 
@@ -14,7 +16,7 @@ player.on('ready',()=>{
 })
 ```
 
-## Options
+## 👉🏻 Options
 
 Available SKIN_NAME names :-
 
@@ -25,7 +27,7 @@ Available SKIN_NAME names :-
 
 
 
-## Try it 
+## ✨ Try it 
 https://videojs-theme-kit-site.vercel.app/
 
 <h3>Sleek</h3>
