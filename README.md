@@ -12,20 +12,22 @@ npm install videojs-theme-kit
 import 'videojs-theme-kit';
 
 player.on('ready',()=>{
-  player.theme({skin: SKIN_NAME})
+  player.theme({
+          skin: SKIN_NAME,
+          color: 'HEXCODE_OF_THE_COLOR'  //optional
+  })
 })
 ```
 
 ## 👉🏻 Options
 
-Available SKIN_NAME names :-
-
-1. 'slate'.
-2. 'spaced'.
-3. 'sleel'.
-4. 'zen'.
+| Option  | Type     | Required | Description                                                                                                                                                                              |
+| ------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `skin`  | `string` | ✅ Yes    | Name of the skin to apply. Must be one of:<br>• `'slate'`<br>• `'spaced'`<br>• `'sleek'`<br>• `'zen'` |
+| `color` | `string` | ❌ No     | HEX color code to customize the player's theme highlight color  (e.g., `'#ff5722'`, `'#00bcd4'`)                                                                                             |
 
 
+<br>
 
 ## ✨ Try it 
 https://videojs-theme-kit-site.vercel.app/
