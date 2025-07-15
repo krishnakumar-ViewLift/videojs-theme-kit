@@ -5,6 +5,7 @@ import type Component from 'video.js/dist/types/component'
 
 interface ThemeOptions extends Player {
     skin?: 'slate' | 'spaced' | 'sleek' | 'zen';
+    color?: string;
 }
 
 type VideoJSPlayer = Player & Component & {

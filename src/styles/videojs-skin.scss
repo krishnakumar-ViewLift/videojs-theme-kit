@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+.video-js.skin_slate .vjs-control-bar .vjs-play-progress{
+  background-color: currentColor;
+}
+
+.video-js.skin_slate .vjs-control-bar .vjs-volume-level{
+  background-color: currentColor;
+}
+
 .video-js.skin_slate .vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal:hover .vjs-volume-control.vjs-control.vjs-volume-horizontal {
   display: flex;
   justify-content: center;
@@ -128,10 +136,12 @@
   min-width: 1.5em;
   padding: 0 !important;
   user-select: none;
+  font-weight: bold;
 }
 
 .video-js.skin_slate .vjs-current-time.vjs-time-control.vjs-control {
   margin-left: 14px !important;
+  font-weight: bold;
 }
 
 /* Big play */
@@ -174,6 +184,13 @@
   z-index: 1 !important;
   height: 6em !important;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%) !important;
+}
+
+.video-js.skin_spaced .vjs-control-bar .vjs-play-progress{
+  background-color: currentColor;
+}
+.video-js.skin_spaced .vjs-control-bar .vjs-volume-level{
+  background-color: currentColor;
 }
 
 .video-js.skin_spaced .vjs-fade > * {
@@ -340,6 +357,8 @@
   margin: auto;
   font-size: 6em;
   line-height: 1.3em;
+  border: .06666em solid;
+  color: inherit;
 }
 
 .video-js.skin_spaced .vjs-seek-to-live-control.vjs-control.vjs-at-live-edge {
@@ -544,6 +563,13 @@ iframe {
   transform: translateX(-50%);
 }
 
+.video-js.skin_sleek .sleek-bar .vjs-play-progress{
+  background-color: currentColor;
+}
+.video-js.skin_sleek .sleek-bar .vjs-volume-level{
+  background-color: currentColor;
+}
+
 .video-js.skin_sleek .sleek-bar > button.vjs-control.vjs-button.vjs-skip-button {
   display: flex;
   width: 4em;
@@ -621,6 +647,9 @@ iframe {
   visibility: hidden;
   opacity: 0;
   display: none;
+}
+.video-js.skin_zen .zen-bar .vjs-play-progress{
+  background-color: currentColor;
 }
 
 .video-js.skin_zen .zen-bar {
@@ -725,6 +754,7 @@ iframe {
 
 .video-js.skin_zen .vjs-slider-horizontal .vjs-volume-level {
   height: 100%;
+  background-color: currentColor;
 }
 
 .video-js.skin_zen .zen-bar .vjs-volume-bar {
@@ -750,7 +780,8 @@ iframe {
 }
 
 .video-js.skin_zen .zen-bar .vjs-volume-level:before {
-  border-bottom: 1.75em solid #fff;
+  color: inherit;
+  border-bottom: 1.75em solid;
   border-left: 3em solid rgba(0, 0, 0, 0);
   border-right: 0 solid rgba(0, 0, 0, 0);
   border-top: 0 solid rgba(0, 0, 0, 0);

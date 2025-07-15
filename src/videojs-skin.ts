@@ -9,12 +9,18 @@ import { zenHandler } from "./skins/zen";
 
   const CustomiseUI = function (this: VideoJSPlayer, options: ThemeOptions) {
     const player = this;
+    const playerEl= player?.el() as HTMLElement;
 
     const skin = options.skin || 'skin_slate';
+    const color= options?.color || '#ffffff';
 
     switch (skin) {
       case 'slate': {
         player.addClass('skin_slate');
+
+        if(playerEl)
+        playerEl.style.color=color
+
         player.controlBar?.removeChild('VolumePanel');
         player.controlBar?.addChild('VolumePanel', { inline: false }, 2);
         break;
@@ -22,6 +28,10 @@ import { zenHandler } from "./skins/zen";
 
       case 'spaced': {
         player.addClass('skin_spaced');
+
+        if(playerEl)
+          playerEl.style.color=color
+
         player.controlBar?.removeChild('VolumePanel');
         player.controlBar?.addChild('VolumePanel', { inline: false }, 2);
 
@@ -46,6 +56,9 @@ import { zenHandler } from "./skins/zen";
 
       case 'sleek': {
         player.addClass('skin_sleek');
+
+        if(playerEl)
+          playerEl.style.color=color
 
         const sleekbar = document.createElement('div');
         sleekbar.className = 'sleek-bar';
@@ -90,6 +103,8 @@ import { zenHandler } from "./skins/zen";
 
       case 'zen':{
         zenHandler(this);
+        if(playerEl)
+          playerEl.style.color=color;
         break;        
       }
 
