@@ -1,22 +1,22 @@
 {
   "name": "videojs-theme-kit",
-  "version": "0.0.14",
-  "description": "Videojs plugin to easily customize and apply skins to Video.js players",
+  "version": "0.0.15",
+  "description": "Video.js plugin to easily customize and apply skins to player",
   "main": "index.js",
   "module": "dist/index.js",
   "style": "dist/style.css",
   "repository": "https://github.com/dds05/videojs-theme-kit",
-  "homepage": "https://videojs-theme-kit-site.vercel.app/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "videojs",
     "videojs-plugin",
-    "videojs-theme",
+    "videojs-themes",
     "videojs-theme-kit",
     "videojs-customisation",
-    "videojs-skin"
+    "videojs-skin",
+    "video.js"
   ],
   "author": "Daman",
   "license": "ISC",

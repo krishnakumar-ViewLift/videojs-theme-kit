@@ -1,5 +1,6 @@
 ## 🎨 Videojs Theme Kit
-Videojs plugin to easily customize and apply beautiful skins to your Video.js players with minimal setup. Includes 4 modern themes : Slate, Spaced, Sleek, and Zen to instantly enhance the look and feel of your player. Supports infinite color customization, allowing you to perfectly match your brand or aesthetic without writing custom CSS.
+Video.js plugin to easily customize and apply beautiful skins to player with minimal setup. <br/> <br/>
+Includes 4 modern themes : Slate, Spaced, Sleek, and Zen to instantly enhance the look and feel of your player. Supports infinite color customization, allowing you to perfectly match your brand or aesthetic without writing custom CSS.
 
 ## 👉🏻 Installation  
 ```
