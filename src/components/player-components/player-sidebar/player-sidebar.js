@@ -1,6 +1,7 @@
 import { SettingsOptionOneWrapper } from '../player-setting-option-wrapper/player-setting-option-one-wrapper.js';
 import { SettingsOptionTwoWrapper } from '../player-setting-option-wrapper/player-setting-option-two-wrapper.js';
 
+
 export class Sidebar {
     constructor(props) {
         if (!props || typeof props !== 'object') {
@@ -38,9 +39,9 @@ export class Sidebar {
         const sidebar = document.createElement('div');
         sidebar.className = this.klassname;
 
-        const titleElement = document.createElement('h2');
+        const titleElement = document.createElement('div');
         titleElement.textContent = this.title;
-        titleElement.style.fontSize = '38px';
+        titleElement.className = 'settingsHeading';
         sidebar.appendChild(titleElement);
 
         const list = document.createElement('div');
