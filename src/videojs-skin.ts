@@ -2,7 +2,7 @@ import videojs from "video.js";
 import { addRewindButton } from './components/RewindButton';
 import { ThemeOptions, VideoJSPlayer } from "./types/index";
 import { zenHandler } from "./skins/zen";
-
+import { VideoPlayerCustomUI} from "./components/playerCustomUI/playerCustomUI";
 
 
 (function (videojs) {
@@ -51,6 +51,84 @@ import { zenHandler } from "./skins/zen";
         }
 
         player.controlBar?.el()?.append(customProgressBar);
+        break;
+      }
+      case 'smartTV': {
+        player.addClass('skin_smartTV');
+
+        if(playerEl)
+          playerEl.style.color=color
+
+       // player.controlBar?.removeChild('VolumePanel');
+        while (player.controlBar?.el()?.lastChild) {
+          player.controlBar?.el()?.removeChild(player.controlBar?.el()?.lastChild);
+        }
+         const config = {
+        streamUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+        videoTitleConfig: {
+          text: 'Big Buck Bunny',
+          fontSize: '40px',
+          fontWeight: 'bold',
+          textAlign: 'left',
+          textDecoration: 'none',
+          textTransform: 'none',
+          lineHeight: 'normal',
+          letterSpacing: 'normal',
+          color: '#ffffff',
+          backgroundColor: 'transparent',
+        },
+        startFromBeginningBtnConfig: {
+          text: 'Start From Beginning',
+          enabled: true,
+          width: '150px',
+          height: '35px',
+          fontSize: '16px',
+          fontWeight: 'normal',
+          textAlign: 'center',
+          textDecoration: 'none',
+          textTransform: 'none',
+          lineHeight: 'normal',
+          letterSpacing: 'normal',
+          color: '#ffffff',
+          backgroundColor: '#000000',
+          focused: false,
+        },
+        drmEnabled: false,
+        
+        }
+       
+        const PlayerCustomUI = new VideoPlayerCustomUI(playerEl,player,config);
+        
+        //player.controlBar?.addChild('VolumePanel', { inline: false }, 2);
+       // player.controlBar?.removeChild('FullscreenToggle');
+       // player.controlBar?.removeChild('PictureInPictureToggle');
+       const playPauseButton = player.controlBar?.getChild('PlayToggle');
+       player.controlBar?.addChild(playPauseButton);
+        const ProgressControl = player.controlBar?.getChild('ProgressControl');
+        const CurrentTimeDisplay = player.controlBar?.getChild('CurrentTimeDisplay');
+        const SeekToLive = player.controlBar?.getChild('SeekToLive');
+
+        const customProgressBar = document.createElement('div');
+        customProgressBar.className = 'custom-smartTV-progress-bar';
+        const DurationDisplay = player.controlBar?.getChild('DurationDisplay');
+       
+        if (ProgressControl && CurrentTimeDisplay && SeekToLive) {
+            customProgressBar.append(     
+            CurrentTimeDisplay.el(),    
+            ProgressControl.el(),
+            DurationDisplay.el(),
+            SeekToLive.el()
+          );
+        }
+ 
+        player.controlBar?.el()?.append(customProgressBar);
+
+       
+        
+
+       // player.controlBar?.removeChild('AudioTrackButton');
+       // vjsCustomControlSpacer?.addChild('AudioTrackButton', { inline: false }, 2);
+
         break;
       }
 

@@ -846,3 +846,616 @@ iframe {
     margin: 10px;
   }
 }
+
+
+//smartTV
+.video-js.skin_smartTV .vjs-button > .vjs-icon-placeholder:before {
+  font-size: 2.2em;
+  line-height: 2.6;
+}
+
+.video-js.skin_smartTV .vjs-control-bar {
+  z-index: 1 !important;
+  height: 100% !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%) !important;
+  display: block !important;
+}
+
+.video-js.skin_smartTV .vjs-control-bar .vjs-play-progress{
+  background-color: currentColor;
+}
+.video-js.skin_smartTV .vjs-control-bar .vjs-volume-level{
+  background-color: currentColor;
+  display: none !important;
+}
+
+.video-js.skin_smartTV .vjs-fade > * {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: visibility 1s, opacity 1s !important;
+}
+
+.video-js.skin_smartTV .custom-smartTV-progress-bar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 1.5em;
+    bottom: 4em;
+}
+.video-js.skin_smartTV .video-title {
+ flex: 1 1 auto;
+ font-size: 24px;
+  font-weight: 700;
+  padding-left: 67px;
+  padding-right: 67px;
+  position: relative;
+}
+
+.video-js.skin_smartTV .vjs-progress-control {
+  left: -10px;
+  position: relative;
+  width: 100%;
+  height: 1.5em;
+  top: -1em;
+  transition: height 0.1s, top 0.1s;
+}
+
+.video-js.skin_smartTV .vjs-current-time {
+  display: block;
+}
+.video-js.skin_smartTV:not(.vjs-live) .vjs-duration {
+   display: block;
+  position: relative;
+  right: 0em;
+      bottom: 1.65em;
+    font-size: 16px;
+  font-weight: 600;
+  padding-left: 0em;
+}
+
+.video-js.skin_smartTV.vjs-live .vjs-current-time {
+  display: none !important;
+}
+
+.video-js.skin_smartTV .vjs-current-time {
+  display: block;
+  position: relative;
+  right: 0em;
+  bottom: 1.65em;
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 0em
+}
+
+.video-js.skin_smartTV .vjs-custom-control-spacer {
+  display: flex;
+    min-height: 50px;
+    position: absolute;
+    bottom: 8em;
+    width: 100%;
+}
+
+.video-js.skin_smartTV .vjs-progress-control .vjs-progress-holder {
+  margin: 0 0 0 20px;
+}
+
+.video-js.skin_smartTV .vjs-remaining-time.vjs-time-control.vjs-control {
+  display: none;
+}
+
+.video-js.skin_smartTV button.vjs-control.vjs-button.vjs-slowmo-button {
+  font-size: 14px;
+  font-weight: 500;
+  align-self: center;
+  height: min-content;
+  padding: 5px 2px;
+  border-radius: 8px;
+}
+
+.video-js.skin_smartTV .vjs-progress-control .vjs-progress-holder {
+  height: 10px !important;
+}
+
+.video-js.skin_smartTV .vjs-play-progress:before {
+      font-size: 1.8em;
+    line-height: unset;
+    top: -0.21em;
+}
+
+.video-js.skin_smartTV .vjs-play-progress .vjs-time-tooltip {
+  display: none !important;
+}
+
+/* */
+.video-js.skin_smartTV .vjs-mouse-display {
+  font-size: 1.6666666667em;
+}
+
+.video-js.skin_smartTV .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: 1em !important;
+}
+
+.video-js.skin_smartTV .vjs-button {
+  width: 6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-js.skin_smartTV .vjs-fullscreen .icon-minimize,
+.icon-maximize {
+  display: none;
+  height: 32px;
+}
+
+.video-js.skin_smartTV .vjs-fullscreen .icon-maximize,
+.icon-minimize {
+  display: none;
+  height: 32px;
+}
+
+.video-js.skin_smartTV button.vjs-play-control.vjs-control.vjs-button {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 4em;
+    line-height: 1.3em;
+    background-color: rgba(43, 51, 63, 0.7);
+}
+
+.video-js.skin_smartTV .vjs-audio-button.vjs-control.vjs-button {
+    width: 70px;
+    height: 65px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    right: 67px;
+    bottom: 0;
+    font-size: 2em;
+    line-height: 1.3em;
+    background-color: rgba(43, 51, 63, 0.7);
+}
+
+.video-js.skin_smartTV button.vjs-fullscreen-control.vjs-control.vjs-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+}
+
+.video-js.skin_smartTV.vjs-subs-caps-button .vjs-icon-placeholder:before {
+  display: none;
+}
+
+.video-js.skin_smartTV .vjs-volume-panel .vjs-volume-control {
+  margin-left: -10px;
+  display: none !important;
+}
+
+.video-js.skin_smartTV .skipbtn:hover {
+  cursor: pointer;
+}
+
+.video-js.skin_smartTV .rewindbtn:hover {
+  cursor: pointer;
+}
+
+.video-js.skin_smartTV .vjs-live-control {
+  position: absolute !important;
+  right: 0em !important;
+  background-color: none;
+  bottom: 1.8em !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+}
+
+.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control {
+  position: relative;
+  top: -0.5em;
+}
+
+.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control > span.vjs-icon-placeholder {
+  display: none;
+}
+
+.video-js.skin_smartTV.vjs-paused .vjs-big-play-button {
+  display: none !important;
+}
+
+.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control.vjs-at-live-edge {
+  font-weight: bold;
+}
+
+.video-js.skin_smartTV .vjs-menu > ul.vjs-menu-content {
+  bottom: 3.5em !important;
+  right: -1em;
+}
+
+.video-js.skin_smartTV .vjs-chromecast-button .vjs-icon-placeholder {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.video-js.skin_smartTV .vjs-subs-caps-button.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button {
+  display: none;
+}
+
+.video-js.skin_smartTV button.vjs-subs-caps-button.vjs-menu-button.vjs-menu-button-popup.vjs-button {
+  height: min-content;
+  width: min-content;
+}
+
+.video-js.skin_smartTV .vjs-volume-panel.vjs-volume-panel-vertical {
+  width: 6em;
+}
+
+.video-js.skin_smartTV .content {
+  bottom: 3.4rem !important;
+  right: -4rem !important;
+}
+
+.setting-icon > svg {
+  height: 18px !important;
+}
+
+.output-overlay {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .tvProviderImage {
+    display: none;
+  }
+  .video-js.skin_smartTV .vjs-fullscreen .icon-minimize,
+  .icon-maximize {
+    height: 30px !important;
+  }
+  .video-js.skin_smartTV .vjs-fullscreen .icon-maximize,
+  .icon-minimize {
+    height: 30px !important;
+  }
+  .video-js.skin_smartTV button.vjs-fullscreen-control.vjs-control.vjs-button > span.vjs-icon-placeholder::before {
+    height: min-content;
+  }
+  .video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control {
+    position: relative !important;
+    right: 0em !important;
+    bottom: 0 !important;
+  }
+  .video-js.skin_smartTV .vjs-live-control {
+    right: -1em !important;
+    position: relative !important;
+    bottom: 0 !important;
+    font-size: 12px !important;
+  }
+  .video-js.skin_smartTV button.vjs-slowmo-button {
+    display: none;
+  }
+  .video-js.skin_smartTV button.vjs-rewind-button {
+    display: none;
+  }
+  .video-js.skin_smartTV button.vjs-rewind-button > svg {
+    height: 20px;
+  }
+  .video-js.skin_smartTV .vjs-button {
+    width: 4.8em;
+  }
+  .video-js.skin_smartTV .widget-selection {
+    display: none;
+  }
+  .video-js.skin_smartTV .container {
+    display: none !important;
+  }
+  .video-js.skin_smartTV .vjs-control-bar {
+    height: 4em !important;
+  }
+  .video-js.skin_smartTV .vjs-button > .vjs-icon-placeholder:before {
+    font-size: 2.5em;
+    line-height: 1.5;
+  }
+  .video-js.skin_smartTV .vjs-play-progress:before {
+    font-size: 1.2em;
+    position: absolute;
+    right: -0.5em;
+    z-index: 1;
+  }
+  .video-js.skin_smartTV button.vjs-skip-button > svg {
+    height: 20px;
+  }
+  .video-js.skin_smartTV button.vjs-big-play-button {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 2.1rem !important;
+  }
+  .video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control > span.vjs-icon-placeholder {
+    display: block;
+  }
+  .stream-selector-icon > svg {
+    width: 24px;
+    height: 24px;
+  }
+  .video-js.skin_smartTV.vjs-live .vjs-progress-control .vjs-progress-holder {
+    margin: 0 12px 0 21px;
+  }
+  .video-js.skin_smartTV .vjs-seek-to-live-text {
+    font-size: 12px;
+  }
+  .video-js.skin_smartTV .vjs-progress-control .vjs-progress-holder {
+    margin: 0 0 0 20px;
+  }
+}
+.video-js.skin_smartTV.vjs-paused .vjs-big-play-button {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 6em;
+  line-height: 1.3em;
+}
+
+.video-js.skin_smartTV .vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal:hover .vjs-volume-control.vjs-control.vjs-volume-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: width 0.1s;
+}
+
+.video-js.skin_smartTV .vjs-volume-panel.vjs-control.vjs-volume-panel-horizontal:active .vjs-volume-control.vjs-control.vjs-volume-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: width 0.1s;
+}
+
+@media (max-width: 600px) {
+  .video-js.skin_smartTV button.vjs-big-play-button {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 2.1rem !important;
+  }
+
+}
+
+
+/*************** playerSeekbar.css ***************/
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+  }
+  .vl-player-container{
+        position: absolute;
+    width: 100%;
+    min-height: 50px;
+    bottom: 0.5em;
+  }
+.vl-player-container .seekbar-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    height: 12px;
+    background: #444;
+    width: 90%;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 0;
+    user-select: none;
+    z-index: 20;
+  }
+  
+.vl-player-container .seekbar-buffer {
+    position: absolute;
+    height: 100%;
+    background: #888;
+    width: 0;
+    border-radius: 6px;
+    z-index: 1;
+  }
+  
+.vl-player-container  .seekbar-progress {
+    position: absolute;
+    height: 100%;
+    background: rgba(254, 253, 255, 0.7);
+    width: 0;
+    border-radius: 6px;
+    z-index: 2;
+    transition: width 0.1s linear;
+  }
+  
+.vl-player-container .seekbar-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    /* border: 2px solid #4169E1; */
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+ .vl-player-container .seekbar-thumb:hover {
+    background: #ffeaea;
+  }
+  
+ .vl-player-container .seekbar-tooltip {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+.vl-player-container  .seekbar-time-label, .vl-player-container .seekbar-duration-label {
+    position: relative;
+    top: 18px;
+    font-size: 13px;
+    color: #eee;
+    margin-right: 4px;
+    z-index: 5;
+  }
+  
+
+
+
+/*************** playerButtons.css ***************/
+
+.vl-player-container .play-pause-btn {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255, .5);
+  cursor: pointer;
+} 
+
+.vl-player-container .play-pause-btn img {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+}
+
+
+.vl-player-container .left-side-container {
+  position: absolute !important;
+  display: flex;
+  left: 5%;
+  bottom: 77px;
+}
+
+.vl-player-container .right-side-container {
+  position: absolute !important;
+  display: flex;
+  right: 5%;
+  bottom: 77px;
+}
+
+.vl-player-container .settings-btn {
+  border-radius: 5px;
+  padding: 5px;
+  bottom: 100px;
+  width: 50px;
+  height: 40px;
+  margin: 0 5px;
+  background: rgba(255,255,255, 0.5);
+  cursor: pointer;
+  z-index: 20;
+}
+
+.vl-player-container .settings-btn img{
+  height: 100%;
+}
+
+.vl-player-container .restart-btn {
+  right: 2%;
+  border-radius: 8px;
+  padding: 5px;
+  bottom: 100px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 5px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+
+/*************** player-setting-option-wrapper ***************/
+.vl-player-container .default-option-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 50px;
+  background: #525760;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 2px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+  margin: 20px 0px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.vl-player-container .default-option-wrapper span {
+  height: 40px;
+}
+
+.vl-player-container .default-option-wrapper span > img{
+  height: 100%;
+}
+
+
+.vl-player-container .default-sidebar {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(30, 30, 30, .75);
+  height: 100%;
+  min-height: 720px;
+  width: 400px;
+  padding: 50px 20px 0 20px;
+  right: 0px;
+  z-index: 30;
+  /* right: -450px; */
+}
+
+.vl-player-container .focused{
+    outline: 2px solid #ffffff;
+}

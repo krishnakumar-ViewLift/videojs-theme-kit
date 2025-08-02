@@ -1,11 +1,11 @@
 {
-  "name": "videojs-theme-kit",
+  "name": "videojs-theme-smarttv",
   "version": "0.0.15",
   "description": "Video.js plugin to easily customize and apply skins to player",
   "main": "index.js",
   "module": "dist/index.js",
   "style": "dist/style.css",
-  "repository": "https://github.com/dds05/videojs-theme-kit",
+  "repository": "https://github.com/krishnakumar-ViewLift/videojs-theme-kit",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,7 @@
     "videojs",
     "videojs-plugin",
     "videojs-themes",
-    "videojs-theme-kit",
+    "videojs-theme-smarttv",
     "videojs-customisation",
     "videojs-skin",
     "video.js"
@@ -37,8 +37,8 @@
     "load-grunt-tasks": "^5.1.0",
     "rollup-plugin-dts": "^6.2.1",
     "sass": "^1.85.1",
-    "typescript": "^5.8.3",
-    "tslib": "^2.8.1"
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "global": "^4.3.2",
