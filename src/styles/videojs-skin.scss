@@ -918,7 +918,7 @@ iframe {
 .video-js.skin_smartTV .vjs-duration {
    display: none
 }
-.video-js.skin_smartTV .vjs-remaining-time {
+.video-js.skin_smartTV:not(.vjs-live) .vjs-remaining-time {
   display: block !important;
   position: relative;
   right: 0em;
@@ -968,9 +968,10 @@ iframe {
   border-radius: 4px;
 }
 
-.video-js.skin_smartTV .vjs-remaining-time.vjs-time-control.vjs-control {
+.video-js.skin_smartTV.vjs-live .vjs-remaining-time.vjs-time-control.vjs-control {
   display: block;
   opacity: 0;
+  width: 55px;
 }
 
 .video-js.skin_smartTV button.vjs-control.vjs-button.vjs-slowmo-button {
@@ -1140,7 +1141,7 @@ iframe {
     font-size: 32px;
     height: 45px;
     transition: opacity 0.1s;
-    padding: 5px 5px 0px 51px;
+    padding: 5px 1px 0px 51px;
     position: relative;
     bottom: 0;
     width: 60%;

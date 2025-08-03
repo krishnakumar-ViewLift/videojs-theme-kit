@@ -2,7 +2,7 @@ import videojs from "video.js";
 import { parseSvgString } from '../../utils/helper'
 import Player from "video.js/dist/types/player";
 import { VideoJSPlayer } from "../../types";
-import { createSideBar } from "./playerHelper";
+import { createCloseCaptionSideBar, createSideBar } from "./playerHelper";
 const addStartFromBeginningButton = (player:Player) => {
     var Button = videojs.getComponent('Button');
     class StartFromBeginning extends Button {
@@ -82,7 +82,7 @@ const addCloseCaptionButton = (player:Player) => {
             //    let newTime = 0;
                // player.currentTime(newTime);
            // }
-           createSideBar(player, this);
+           createCloseCaptionSideBar(player, this);
         }
     };
     videojs.registerComponent('CloseCaptionButton', CloseCaptionButton);

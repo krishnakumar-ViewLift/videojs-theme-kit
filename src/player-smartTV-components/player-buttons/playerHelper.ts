@@ -25,8 +25,9 @@
         }
       )
     }
-
-    if (player?.textTracks()?.tracks_ && player?.textTracks()?.tracks_?.length > 0) {
+     let textTracks = player?.textTracks()?.tracks_;
+      textTracks = textTracks.filter(track => track.kind === 'captions' || track.kind === 'subtitles');
+    if (textTracks && textTracks?.length > 0) {
       items.push(
         {
           text: 'Subtitles', isSelected: false, callback: () => {
@@ -127,7 +128,7 @@
     function audioLanguageSelector(mainSidebar,player: VideoJSPlayer) {
       if (!mainSidebar) return;
       let sidebar;
-      const audioTracks = player.el_.player.audioTracks().tracks_;
+      const audioTracks = player?.audioTracks()?.tracks_;
       const currentAudio = audioTracks?.find(track => track.enabled)?.label || audioTracks?.[0]?.label || 'Default';
 
       const items = audioTracks.map(track => ({
@@ -171,9 +172,10 @@
     function closeCaptionSelector(mainSidebar,player: VideoJSPlayer) {
       if (!mainSidebar) return;
       let sidebar;
-      let textTracks = player.el_.player.textTracks().tracks_;
-      const currentText = textTracks?.find(track => track.mode === 'showing')?.label || textTracks?.[0]?.label || 'Default';
+      let textTracks = player.textTracks().tracks_;
       textTracks = textTracks.filter(track => track.kind === 'captions' || track.kind === 'subtitles');
+      const currentText = textTracks?.find(track => track.mode === 'showing')?.label || textTracks?.[0]?.label || 'Default';
+     
       const items = textTracks.map(track => {
           return {
             text: track.label,
@@ -213,6 +215,62 @@
       });
       sidebar.mount(player?.el());
     }
+
+    export function createCloseCaptionSideBar(player: VideoJSPlayer,buttonElement?: any) {
+    let mainSidebar;
+     let textTracks = player.textTracks().tracks_;
+      textTracks = textTracks.filter(track => track.kind === 'captions' || track.kind === 'subtitles');
+      const currentText = textTracks?.find(track => track.mode === 'showing')?.label || textTracks?.[0]?.label || 'Default';
+     
+      const items = textTracks.map(track => {
+          return {
+            text: track.label,
+            id: track.id,
+            kind: track.kind,
+            lang: track.language,
+            mode: track.mode,
+            isSelected: currentText === track.label,
+            callback: () => {
+              mainSidebar.currentFocusedOption.focus();
+              mainSidebar.unmount();
+          }
+        }
+      });
+
+
+      mainSidebar = new Sidebar({
+      title: 'Closed Captions',
+      items: items,
+      klassname: 'default-sidebar',
+      lastFocusedElement: buttonElement,
+      type: 'selection',
+      focused: true,  
+       onselect: (data) => {
+           textTracks?.forEach(track => {
+            track.mode = track.id === data.id?"showing":"hidden";
+        });  
+        mainSidebar.unmount(player?.el());
+        player.controlBar?.removeClass('hidePlayerControls');
+        player.options({
+          inactivityTimeout: 4000
+      });
+       setTimeout(() => {
+          buttonElement.focus();
+         // player.userActive(false);
+        }, 100);
+
+      }, 
+      callback: () => {
+        
+      }
+    });
+    mainSidebar.mount(player?.el());
+    player.controlBar?.addClass('hidePlayerControls');
+    player.options({
+        inactivityTimeout: 0
+  }); 
+    return mainSidebar;
+  }
       
   
   

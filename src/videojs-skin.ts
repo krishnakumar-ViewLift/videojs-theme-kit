@@ -3,6 +3,7 @@ import { addRewindButton } from './components/RewindButton';
 import { ThemeOptions, VideoJSPlayer } from "./types/index";
 import { zenHandler } from "./skins/zen";
 import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } from "./player-smartTV-components/player-buttons/playerButtons";
+import { set } from "video.js/dist/types/tech/middleware";
 
 
 (function (videojs) {
@@ -95,8 +96,22 @@ import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } 
         vjsCustomControlSpacer?.addChild(StartFromBeginning);
         const SettingsButton = addSettingsButton(player);
         vjsCustomControlSpacer?.addChild(SettingsButton);
-        const CloseCaptionButton = addCloseCaptionButton(player);
-        vjsCustomControlSpacer?.addChild(CloseCaptionButton);
+        
+        try{
+          setTimeout(() => {
+           let textTracks = player.textTracks().tracks_;
+            textTracks = textTracks.filter(track => track.kind === 'captions' || track.kind === 'subtitles');
+            if(textTracks && textTracks?.length > 0){
+                 const CloseCaptionButton = addCloseCaptionButton(player);
+                  vjsCustomControlSpacer?.addChild(CloseCaptionButton);
+            }
+          }, 1000);
+        }catch(e){}
+       try{
+         setTimeout(() => {
+          player.el_.player.qualityLevels().selectedIndex_ = -1;
+         }, 1000);
+       }catch(e){}
 
         
 
