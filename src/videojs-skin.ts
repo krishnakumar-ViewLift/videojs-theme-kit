@@ -68,6 +68,7 @@ import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } 
         const ProgressControl = player.controlBar?.getChild('ProgressControl');
         const CurrentTimeDisplay = player.controlBar?.getChild('CurrentTimeDisplay');
         const SeekToLive = player.controlBar?.getChild('SeekToLive');
+        const LiveDisplay = player.controlBar?.getChild('LiveDisplay');
 
         const customProgressBar = document.createElement('div');
         customProgressBar.className = 'custom-smartTV-progress-bar';
@@ -77,8 +78,8 @@ import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } 
             customProgressBar.append(     
             CurrentTimeDisplay.el(),    
             ProgressControl.el(),
-            RemainingTimeDisplay.el(),
-            SeekToLive.el()
+            RemainingTimeDisplay.el(),           
+            LiveDisplay?.el()
           );
         }
  
@@ -86,8 +87,8 @@ import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } 
         
        
         const vjsCustomControlSpacer = player.controlBar?.getChild('CustomControlSpacer');
+        vjsCustomControlSpacer?.addChild(SeekToLive);
         const title = player.getChild("TitleBar");
-  
         vjsCustomControlSpacer?.addChild(title);
 
         const StartFromBeginning =  addStartFromBeginningButton(player);  

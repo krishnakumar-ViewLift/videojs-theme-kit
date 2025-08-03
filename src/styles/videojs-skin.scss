@@ -903,12 +903,13 @@ iframe {
 }
 
 .video-js.skin_smartTV .vjs-progress-control {
-  left: -10px;
+  padding: 0px 0px;
   position: relative;
+  display: block;
   width: 100%;
   height: 1.5em;
   top: -1em;
-  transition: height 0.1s, top 0.1s;
+  transition: height 0.1s, top 0.1s; 
 }
 
 .video-js.skin_smartTV .vjs-current-time {
@@ -917,7 +918,7 @@ iframe {
 .video-js.skin_smartTV .vjs-duration {
    display: none
 }
-.video-js.skin_smartTV:not(.vjs-live) .vjs-remaining-time {
+.video-js.skin_smartTV .vjs-remaining-time {
   display: block !important;
   position: relative;
   right: 0em;
@@ -925,6 +926,10 @@ iframe {
   font-size: 16px;
   font-weight: 600;
   padding-left: 0em;
+  width: 55px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .video-js.skin_smartTV .vjs-remaining-time span[aria-hidden] {
@@ -932,7 +937,8 @@ iframe {
 }
 
 .video-js.skin_smartTV.vjs-live .vjs-current-time {
-  display: none !important;
+  display: block !important;
+  opacity: 0;
 }
 
 .video-js.skin_smartTV .vjs-current-time {
@@ -942,7 +948,10 @@ iframe {
   bottom: 1.65em;
   font-size: 16px;
   font-weight: 600;
-  padding-right: 0em
+  width: 55px;
+  text-align: center;
+  padding-left: 0em;
+  padding-right: 0em;
 }
 
 .video-js.skin_smartTV .vjs-custom-control-spacer {
@@ -954,12 +963,13 @@ iframe {
 }
 
 .video-js.skin_smartTV .vjs-progress-control .vjs-progress-holder {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 0px;
   border-radius: 4px;
 }
 
 .video-js.skin_smartTV .vjs-remaining-time.vjs-time-control.vjs-control {
-  display: none;
+  display: block;
+  opacity: 0;
 }
 
 .video-js.skin_smartTV button.vjs-control.vjs-button.vjs-slowmo-button {
@@ -1039,7 +1049,7 @@ iframe {
     align-items: center;
     border-radius: 5px;
     position: absolute;
-    right: 190px;
+    right: 175px;
     bottom: 0;
     font-size: 18px;
     font-weight: 700;
@@ -1055,7 +1065,7 @@ iframe {
     align-items: center;
     border-radius: 5px;
     position: absolute;
-    right: 58px;
+    right: 55px;
     bottom: 0;
     font-size: 18px;
     font-weight: 700;
@@ -1070,7 +1080,7 @@ iframe {
     align-items: center;
     border-radius: 5px;
     position: absolute;
-    right: 120px;
+    right: 115px;
     bottom: 0;
     font-size: 18px;
     font-weight: 700;
@@ -1113,19 +1123,22 @@ iframe {
 }
 
 .video-js.skin_smartTV .vjs-live-control {
-  position: absolute !important;
-  right: 0em !important;
-  background-color: none;
-  bottom: 1.8em !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
+    position: absolute !important;
+    right: 0em !important;
+    background-color: none;
+    bottom: 1.8em !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    width: 55px;
+    text-align: center;
+    display: block;
 }
 
 .video-js.skin_smartTV .vjs-title-bar {
     background: transparent !important;
     font-size: 32px;
     transition: opacity 0.1s;
-    padding: 0px 5px 0px 50px;
+    padding: 0px 5px 0px 51px;
     position: relative;
     bottom: 0;
     width: 60%;
@@ -1161,8 +1174,24 @@ iframe {
   display: none !important;
 }
 
-.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control.vjs-at-live-edge {
-  font-weight: bold;
+.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control {
+    min-width: 70px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: absolute;
+    right: 175px;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3em;
+    background-color: rgba(43, 51, 63, 0.9);
+    top: 5px;
+}
+
+.video-js.skin_smartTV .vjs-seek-to-live-control.vjs-control:focus {
+  outline: 3px solid currentColor;
 }
 
 .video-js.skin_smartTV .vjs-menu > ul.vjs-menu-content {
@@ -1291,7 +1320,7 @@ iframe {
     font-size: 12px;
   }
   .video-js.skin_smartTV .vjs-progress-control .vjs-progress-holder {
-    margin: 0 0 0 20px;
+    margin: 0 5px 0 5px;
   }
 }
 .video-js.skin_smartTV.vjs-paused .vjs-big-play-button {
