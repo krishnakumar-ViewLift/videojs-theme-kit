@@ -1,6 +1,6 @@
 import { SettingsOptionOneWrapper } from '../player-setting-option-wrapper/player-setting-option-one-wrapper.js';
 import { SettingsOptionTwoWrapper } from '../player-setting-option-wrapper/player-setting-option-two-wrapper.js';
-
+import { parseSvgString } from '../../../utils/helper'
 
 export class Sidebar {
     constructor(props) {
@@ -121,9 +121,13 @@ export class Sidebar {
                     item.instance.optionWrapper.classList.remove('selected');
                     item.instance.selected = false;
                     // Remove image if present
-                    const img = item.instance.optionWrapper.querySelector('img');
+                     const img = item.instance.optionWrapper.querySelector('span');
                     if (img) {
-                        img.parentElement.remove();
+                        img.remove();
+                    }
+                     const img1 = item.instance.optionWrapper.querySelector('svg');
+                    if (img1) {
+                        img1.remove();
                     }
                 }
             });
@@ -131,12 +135,11 @@ export class Sidebar {
             this.currentFocusedOption.optionWrapper.classList.add('selected');
             this.currentFocusedOption.selected = true;
             // Add image to the selected option
-            const selectedElement = document.createElement('span');
-            const img = document.createElement('img');
-            img.src = this.currentFocusedOption.imgSrc;
-            img.alt = 'Selected';
-            selectedElement.appendChild(img);
-            this.currentFocusedOption.optionWrapper.appendChild(selectedElement);
+            const img = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                        </svg>`;
+            
+            this.currentFocusedOption.optionWrapper.appendChild(parseSvgString(img));
             this.onselect(this.currentFocusedOption);
         }
     }

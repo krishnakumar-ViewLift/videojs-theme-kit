@@ -31,6 +31,7 @@ export class SettingsOptionOneWrapper {
 
         const arrowElement = document.createElement('p');
         arrowElement.textContent = "›";
+        arrowElement.style.fontSize = '24px';
         optionWrapper.appendChild(arrowElement);
 
         if (this.focused) {

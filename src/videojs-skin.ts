@@ -2,7 +2,7 @@ import videojs from "video.js";
 import { addRewindButton } from './components/RewindButton';
 import { ThemeOptions, VideoJSPlayer } from "./types/index";
 import { zenHandler } from "./skins/zen";
-import { addSettingsButton, addStartFromBeginningButton } from "./components/player-components/player-buttons/playerButtons";
+import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } from "./components/player-components/player-buttons/playerButtons";
 
 
 (function (videojs) {
@@ -55,7 +55,6 @@ import { addSettingsButton, addStartFromBeginningButton } from "./components/pla
       }
       case 'smartTV': {
         player.addClass('skin_smartTV');
-
         if(playerEl)
           playerEl.style.color=color
 
@@ -63,19 +62,22 @@ import { addSettingsButton, addStartFromBeginningButton } from "./components/pla
         player.controlBar?.removeChild('AudioTrackButton');
         player.controlBar?.removeChild('FullscreenToggle');
         player.controlBar?.removeChild('PictureInPictureToggle');
+        //player.removeChild("TitleBar");
+        //player.removeChild('Description');
+
         const ProgressControl = player.controlBar?.getChild('ProgressControl');
         const CurrentTimeDisplay = player.controlBar?.getChild('CurrentTimeDisplay');
         const SeekToLive = player.controlBar?.getChild('SeekToLive');
 
         const customProgressBar = document.createElement('div');
         customProgressBar.className = 'custom-smartTV-progress-bar';
-        const DurationDisplay = player.controlBar?.getChild('DurationDisplay');
-       
+        const RemainingTimeDisplay = player.controlBar?.getChild('RemainingTimeDisplay');
+  
         if (ProgressControl && CurrentTimeDisplay && SeekToLive) {
             customProgressBar.append(     
             CurrentTimeDisplay.el(),    
             ProgressControl.el(),
-            DurationDisplay.el(),
+            RemainingTimeDisplay.el(),
             SeekToLive.el()
           );
         }
@@ -84,10 +86,18 @@ import { addSettingsButton, addStartFromBeginningButton } from "./components/pla
         
        
         const vjsCustomControlSpacer = player.controlBar?.getChild('CustomControlSpacer');
+        const title = player.getChild("TitleBar");
+  
+        vjsCustomControlSpacer?.addChild(title);
+
         const StartFromBeginning =  addStartFromBeginningButton(player);  
         vjsCustomControlSpacer?.addChild(StartFromBeginning);
         const SettingsButton = addSettingsButton(player);
         vjsCustomControlSpacer?.addChild(SettingsButton);
+        const CloseCaptionButton = addCloseCaptionButton(player);
+        vjsCustomControlSpacer?.addChild(CloseCaptionButton);
+
+        
 
         break;
       }
