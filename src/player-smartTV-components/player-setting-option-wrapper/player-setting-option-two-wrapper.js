@@ -1,5 +1,5 @@
 
-import { parseSvgString } from '../../../utils/helper'
+import { parseSvgString } from '../../utils/helper'
 export class SettingsOptionTwoWrapper {
     constructor(props) {
         if (!props || typeof props !== 'object') {

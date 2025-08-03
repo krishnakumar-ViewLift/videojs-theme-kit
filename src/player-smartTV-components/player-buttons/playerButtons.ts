@@ -1,7 +1,7 @@
 import videojs from "video.js";
-import { parseSvgString } from '../../../utils/helper'
+import { parseSvgString } from '../../utils/helper'
 import Player from "video.js/dist/types/player";
-import { VideoJSPlayer } from "../../../types";
+import { VideoJSPlayer } from "../../types";
 import { createSideBar } from "./playerHelper";
 const addStartFromBeginningButton = (player:Player) => {
     var Button = videojs.getComponent('Button');

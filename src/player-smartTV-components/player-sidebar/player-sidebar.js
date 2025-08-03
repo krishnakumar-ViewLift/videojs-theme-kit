@@ -1,6 +1,6 @@
 import { SettingsOptionOneWrapper } from '../player-setting-option-wrapper/player-setting-option-one-wrapper.js';
 import { SettingsOptionTwoWrapper } from '../player-setting-option-wrapper/player-setting-option-two-wrapper.js';
-import { parseSvgString } from '../../../utils/helper'
+import { parseSvgString } from '../../utils/helper.js'
 
 export class Sidebar {
     constructor(props) {

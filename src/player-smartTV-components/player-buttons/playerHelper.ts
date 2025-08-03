@@ -1,5 +1,5 @@
  import { Sidebar } from '../player-sidebar/player-sidebar.js';
- import { VideoJSPlayer } from "../../../types";
+ import { VideoJSPlayer } from "../../types/index.js";
  export function createSideBar(player: VideoJSPlayer,buttonElement?: any) {
     let mainSidebar;
     let items = [

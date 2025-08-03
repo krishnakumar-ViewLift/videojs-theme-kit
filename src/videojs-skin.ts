@@ -2,7 +2,7 @@ import videojs from "video.js";
 import { addRewindButton } from './components/RewindButton';
 import { ThemeOptions, VideoJSPlayer } from "./types/index";
 import { zenHandler } from "./skins/zen";
-import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } from "./components/player-components/player-buttons/playerButtons";
+import { addSettingsButton, addStartFromBeginningButton,addCloseCaptionButton } from "./player-smartTV-components/player-buttons/playerButtons";
 
 
 (function (videojs) {
